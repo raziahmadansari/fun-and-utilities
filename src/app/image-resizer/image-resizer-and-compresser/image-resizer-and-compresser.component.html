@@ -1,0 +1,34 @@
+<div class="body">
+    <form [formGroup]="form">
+        <div class="wrapper" [class.active]="file">
+            <div class="upload-box" (click)="fileInput.click()">
+                <input class="d-none" #fileInput type="file" accept="image/*" (change)="loadFile($event)">
+                <img #previewImg src="assets/upload-icon.svg" alt="Upload Icon">
+                <p>Browse File to Upload</p>
+            </div>
+            <div class="content">
+                <div class="row sizes">
+                    <div class="column width">
+                        <label for="width">Width</label>
+                        <input type="number" name="img-width" id="width" formControlName="width" placeholder="Eg. 480" (keyup)="onWidthUpdate()">
+                    </div>
+                    <div class="column height">
+                        <label for="height">Height</label>
+                        <input type="number" name="img-height" id="height" formControlName="height" placeholder="Eg. 480" (keyup)="onHeightUpdate()">
+                    </div>
+                </div>
+                <div class="row checkboxes">
+                    <div class="column ratio">
+                        <input type="checkbox" name="img-ratio" formControlName="maintainRatio" id="ratio">
+                        <label for="ratio">Lock aspect ratio</label>
+                    </div>
+                    <div class="column quality">
+                        <input type="checkbox" name="img-quality" formControlName="reduceQuality" id="quality">
+                        <label for="quality">Reduce quality</label>
+                    </div>
+                </div>
+                <button class="download-btn" (click)="resizeAndDownload()">Download Image</button>
+            </div>
+        </div>
+    </form>
+</div>
