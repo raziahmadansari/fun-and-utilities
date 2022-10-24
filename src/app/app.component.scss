@@ -1,0 +1,72 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.context-menu-body {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // min-height: 100vh;
+    // background: linear-gradient(135deg, #8B55E9 0%, #5D6BE6 100%);
+    user-select: none;
+}
+.context-menu-body .wrapper {
+    position: absolute;
+    visibility: hidden;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    .menu {
+        padding: 10px 12px;
+    }
+    .content {
+        .item {
+            list-style: none;
+            font-size: 22px;
+            height: 50px;
+            display: flex;
+            width: 100%;
+            cursor: pointer;
+            padding: 0 5px 0 10px;
+            align-items: center;
+            border-radius: 5px;
+            margin-bottom: 2px;
+            span {
+                font-size: 19px;
+                margin-left: 8px;
+            }
+            &:hover {
+                background: #F2F2F2;
+            }
+        }
+        .setting {
+            display: flex;
+            margin-top: -5px;
+            padding: 5px 12px;
+            border-top: 1px solid #ccc;
+        }
+        .share {
+            position: relative;
+            justify-content: space-between;
+            .share-menu {
+                position: absolute;
+                background: #fff;
+                width: 200px;
+                right: -200px;
+                top: -35px;
+                padding: 13px;
+                opacity: 0;
+                pointer-events: none;
+                border-radius: 10px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+                transition: opacity 0.2s ease;
+            }
+            &:hover {
+                .share-menu {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+}

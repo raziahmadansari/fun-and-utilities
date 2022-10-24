@@ -1,1 +1,72 @@
+<div class="context-menu-body">
+    <div #contextMenu class="wrapper">
+        <div class="content">
+            <ul class="menu">
+                <li class="item" (click)="navigateTo('/')">
+                    <i class="uil uil-home"></i>
+                    <span>Back to Home</span>
+                </li>
+                <li class="item" (click)="refreshPage()">
+                    <i class="uil uil-refresh"></i>
+                    <span>Refresh</span>
+                </li>
+                <li class="item" (click)="navigateTo('image-resizer')">
+                    <i class="uil uil-image"></i>
+                    <span>Image Resizer</span>
+                </li>
+                <li class="item">
+                    <i class="uil uil-eye"></i>
+                    <span>Preview</span>
+                </li>
+                <li class="item share">
+                    <div>
+                        <i class="uil uil-share"></i>
+                        <span>Share</span>
+                    </div>
+                    <i class="uil uil-angle-right"></i>
+                    <ul #shareMenu class="share-menu">
+                        <li class="item">
+                            <i class="uil uil-twitter-alt"></i>
+                            <span>Twitter</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-linkedin-alt"></i>
+                            <span>Linkedin</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-instagram"></i>
+                            <span>Instagram</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-dribbble"></i>
+                            <span>Dribble</span>
+                        </li>
+                        <li class="item">
+                            <i class="uil uil-telegram-alt"></i>
+                            <span>Telegram</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <i class="uil uil-link-alt"></i>
+                    <span>Get Link</span>
+                </li>
+                <li class="item">
+                    <i class="uil uil-edit"></i>
+                    <span>Rename</span>
+                </li>
+                <li class="item">
+                    <i class="uil uil-trash-alt"></i>
+                    <span>Delete</span>
+                </li>
+            </ul>
+            <div class="setting">
+                <li class="item">
+                    <i class="uil uil-setting"></i>
+                    <span>Settings</span>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>
