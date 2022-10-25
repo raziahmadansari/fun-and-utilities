@@ -1,0 +1,111 @@
+/* Font Awesome CDN Link for Icons. */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+.quote-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5372F0;
+}
+.quote-body .wrapper {
+    width: 605px;
+    max-height: 110px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px 30px 25px;
+    transition: all 0.3s ease;
+    &.active {
+        max-height: 100vh;
+    }
+    header {
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .content {
+        margin: 35px 0;
+        .quote-area {
+            display: flex;
+            justify-content: center;
+            i {
+                font-size: 15px;
+                &:first-child {
+                    margin: 3px 10px 0 0;
+                }
+                &:last-child {
+                    display: flex;
+                    align-items: flex-end;
+                    margin: 0 0 3px 10px;
+                }
+            }
+            .quote {
+                font-size: 22px;
+                text-align: center;
+                word-break: break-word;
+            }
+        }
+        .author {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+            span {
+                &:first-child {
+                    margin: -7px 5px 0 0;
+                    font-family: monospace;
+                }
+            }
+        }
+    }
+    .buttons {
+        border-top: 1px solid #CCC;
+        .features {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            ul {
+                display: flex;
+                li {
+                    list-style: none;
+                    margin: 0 5px;
+                    height: 47px;
+                    width: 47px;
+                    color: #5372F0;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    border: 2px solid #5372F0;
+                    transition: color,background-color 0.3s ease;
+                    &:hover {
+                        color: #fff;
+                        background: #5372F0;
+                    }
+                }
+            }
+            button {
+                border: none;
+                outline: none;
+                color: #FFF;
+                cursor: pointer;
+                font-size: 16px;
+                padding: 13px 22px;
+                border-radius: 30px;
+                background: #5372F0;
+                transition: all 0.3s ease;
+                &:hover {
+                    box-shadow: 0 5px 10px #5372F0;
+                }
+                &.loading {
+                    opacity: 0.7;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

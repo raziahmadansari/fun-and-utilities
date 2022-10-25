@@ -74,6 +74,9 @@ export class AppComponent {
   }
 }
 
+/**
+ * Represents the visibility class.
+ */
 class Visibility {
   static visible: string = 'visible';
   static hidden: string = 'hidden';
