@@ -1,0 +1,26 @@
+<div class="quote-body">
+    <div class="wrapper" [class.active]="quote">
+        <header>Quote of the Day</header>
+        <div class="content">
+            <div class="quote-area">
+                <i class="fas fa-quote-left"></i>
+                <p class="quote">{{quote ? quote.content : 'We do what we want because we can.'}}</p>
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="author">
+                <span>__</span>
+                <span class="name">{{quote ? quote.author : 'Anonymous'}}</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="features">
+                <ul>
+                    <li class="sound" (click)="utterQuote()"><i class="fas fa-volume-up"></i></li>
+                    <li class="copy" (click)="copyQuote()"><i class="fas fa-copy"></i></li>
+                    <li class="twitter" (click)="postOnTwitter()"><i class="fab fa-twitter"></i></li>
+                </ul>
+                <button (click)="randomQuote()" [class.loading]="fetchingQuoteInProgress">{{fetchingQuoteInProgress ? 'Fetching Quote...' : 'Next Quote'}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,7 +27,7 @@
                         <label for="quality">Reduce quality</label>
                     </div>
                 </div>
-                <button class="download-btn" (click)="resizeAndDownload()">Download Image</button>
+                <button class="download-btn" [class.disabled]="fileGenerationInProgress" (click)="resizeAndDownload()">{{ fileGenerationInProgress ? 'Downloading Image...' : 'Download Image'}}</button>
             </div>
         </div>
     </form>
