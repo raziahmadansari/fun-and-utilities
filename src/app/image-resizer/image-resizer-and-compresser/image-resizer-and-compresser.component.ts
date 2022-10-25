@@ -10,10 +10,12 @@ export class ImageResizerAndCompresserComponent implements OnInit {
   file?: File;
   form: FormGroup;
   originalImageRatio!: number;
+  fileGenerationInProgress: boolean;
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
   @ViewChild('previewImg') previewImg!: ElementRef<HTMLImageElement>;
 
   constructor() {
+    this.fileGenerationInProgress = false;
     this.form = new FormGroup({
       width: new FormControl(null),
       height: new FormControl(null),
@@ -81,6 +83,7 @@ export class ImageResizerAndCompresserComponent implements OnInit {
   }
 
   resizeAndDownload(): void {
+    this.fileGenerationInProgress = true;
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
     const link = document.createElement('a');
@@ -93,12 +96,16 @@ export class ImageResizerAndCompresserComponent implements OnInit {
     canvas.width = (this.form.get('width')?.value as number) ?? 0;
     canvas.height = (this.form.get('height')?.value as number) ?? 0;
 
-    // drawing user selected image onto the canvas.
-    context?.drawImage(this.previewImg.nativeElement, 0, 0, canvas.width, canvas.height);
-    link.href = canvas.toDataURL('image/jpeg', imgQuality);
-    // link.href = canvas.toDataURL(this.file?.type, imgQuality);
-    link.download = `Converted_${this.file?.name.split('.')[0]}`; // adding converted as download value.
-    link.click(); // clicking <a> element so the file download.
+    setTimeout(() => {
+      // drawing user selected image onto the canvas.
+      context?.drawImage(this.previewImg.nativeElement, 0, 0, canvas.width, canvas.height);
+      link.href = canvas.toDataURL('image/jpeg', imgQuality);
+      // link.href = canvas.toDataURL(this.file?.type, imgQuality);
+      link.download = `Converted_${this.file?.name.split('.')[0]}`; // adding converted as download value.
+      link.click(); // clicking <a> element so the file download.
+
+      this.fileGenerationInProgress = false;
+    }, 500);
   }
 
   /**
