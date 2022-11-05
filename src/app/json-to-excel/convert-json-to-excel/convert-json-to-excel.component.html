@@ -1,0 +1,15 @@
+<div class="excel-generator-body">
+    <div class="wrapper">
+        <header>Json to Excel Converter</header>
+        <div class="content">
+            <textarea name="data" id="data" cols="30" rows="10" placeholder="Enter JSON data here..." #inputText></textarea>
+        </div>
+        <div class="buttons">
+            <div class="filename">
+                <input type="text" name="filename" id="filename" placeholder="Eg. Document" #inputFileName>
+                <label for="filename">.xlsx</label>
+            </div>
+            <button (click)="downloadExcel()" [disabled]="isExcelGenerationInProgress">{{isExcelGenerationInProgress ? 'Generating...' : 'Convert to Excel' }}</button>
+        </div>
+    </div>
+</div>
