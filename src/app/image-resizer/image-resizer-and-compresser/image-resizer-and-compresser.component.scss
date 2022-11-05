@@ -1,17 +1,18 @@
-.body {
+.image-resizer-body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background: #927DFC;
 }
-::selection {
+.image-resizer-body::selection {
     color: #fff;
     background: #927DFC;
 }
-.wrapper {
+.image-resizer-body .wrapper {
     width: 450px;
     height: 288px;
+    overflow: hidden;
     padding: 30px;
     background: #fff;
     border-radius: 9px;
@@ -141,14 +142,15 @@ input[type=number] {
 
 /* Responsiveness */
 @media screen and (max-width: 450px) {
-    .wrapper {
+    .image-resizer-body .wrapper {
         padding: 25px;
         height: 278px;
+        background-color: #fff;
     }
-    .content .row .column {
+    .image-resizer-body .content .row .column {
         width: calc(100% / 2 - 7px);
     }
-    .wrapper.active {
+    .image-resizer-body .wrapper.active {
         height: 550px;
     }
 }
